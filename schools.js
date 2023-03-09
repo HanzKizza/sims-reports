@@ -23,10 +23,12 @@ function getSchools(){
                                 +"<td>"+school["schoolId"]+"</td>"
                                 +"<td>"+school["name"]+"</td>"
                                 +"<td>"+school["schoolType"]+"</td>"
+                                +"<td>"+school["accountValidation"]+"</td>"
                                 +"<td>"+school["officeContact"]+"</td>"
                                 +"<td>"+school["bankSet"]+"</td>"
                                 +"<td>"+school["email"]+"</td>"
                                 +"<td>"+school["town"]+"</td>"
+                                +"<td>"+school["agentName"]+"</td>"
                             +"</tr>";
                 $("#schools").append(schoolRow);
             });
