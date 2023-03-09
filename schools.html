@@ -1,0 +1,31 @@
+<div class="row my-1 d-flex flex-row-reverse align-items-center">
+    <!-- Total number of search results -->
+    <h6 style="width:fit-content; margin-right:1%" class="mt-1 searchResultsNumber"></h6> 
+
+    <!-- The seach box -->
+    <input type="text" id="mySearch" class="form-control mx-1 w-25" placeholder="Search data" onkeyup="searchTable()">
+
+    <!-- Total number of schools -->
+    <h6 style="width:fit-content" class="mt-1 mx-5"><span class="text-muted">Total Schools</span>: <span class="totalSchools"></span></h6>
+</div>
+
+<table class="table table-responsive table-striped">
+    <thead class="bg-dark text-white">
+        <tr class="text-center">
+            <!-- <th>Id</th> -->
+            <th>School_Id</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Contact</th>
+            <th>Bank</th>
+            <th>Email</th>
+            <th>Town</th>
+        </tr>
+    </thead>
+    <tbody id="schools"></tbody>
+</table>
+<h5 class="loaderAnim">Loading schools please wait. <i class="fa fa-spinner fa-spin text-primary"></i></h5>
+
+
+
+<script src="schools.js"></script>
