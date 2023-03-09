@@ -1,0 +1,30 @@
+<div class="row my-1 d-flex flex-row-reverse align-items-center">
+    <!-- Total number of search results -->
+    <h6 style="width:fit-content; margin-right:1%" class="mt-1 searchResultsNumber"></h6> 
+
+    <!-- The seach box -->
+    <input type="text" id="mySearch" class="form-control mx-1 w-25" placeholder="Search data" onkeyup="searchTable()">
+
+    <!-- Total number of students -->
+    <h6 style="width:fit-content" class="mt-1 mx-5"><span class="text-muted">Total Students</span>: <span class="totalStudents"></span></h6>
+</div>
+
+<table class="table table-responsive table-striped">
+    <thead class="bg-dark text-white">
+        <tr class="text-center">
+            <!-- <th>Id</th> -->
+            <th>Student_No</th>
+            <th>Name</th>
+            <th>School_Id</th>
+            <th>Class</th>
+            <th>Last_Updated</th>
+            <th>Fees_Balance</th>
+        </tr>
+    </thead>
+    <tbody id="students"></tbody>
+</table>
+<h5 class="loaderAnim">Loading students please wait. <i class="fa fa-spinner fa-spin text-primary"></i></h5>
+
+
+
+<script src="student.js"></script>
