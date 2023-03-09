@@ -17,8 +17,12 @@
                 <button class="btn w-100 text-center btn-primary" onclick="getSchools()">Schools</button>
                 <button class="btn w-100 text-center btn-primary mt-3" onclick="getSchools2()">Schools 3</button>
             </div>
-            <div class="col-md-10 overflow-auto" id="main">
-                
+            <div class="col-md-10 vh-100 overflow-auto" id="main">
+                <table>
+                    <thead></thead>
+                    <tbody></tbody>
+                </table>
+                <h3>End of list</h3>
             </div>
         </div>
     </div>
@@ -28,10 +32,11 @@
     $(document).ready(function () {
         getSchools()
     });
-    
+
     class school{
 
     }
+
 
     function getSchools(){
         alert("Fetching data")
@@ -42,10 +47,15 @@
                 "Authorization": "111f942a-0c00-4bb8-ac95-f514e2229066"
             },
             success: function(response) {
-                console.log(response)
+                // console.log(response)
                 $.each(response, function(key, value) {
-					// $("#main").append("<li> yes" + key + ": " + value + "</li>");
+                    schools = value;
+                    $.each(schools, function(index, item) {
+                        $("#main").append("<li>" + index + " : " + item + "</li>");
+                    })
                     
+                    // console.log(schools)
+                    $("#main").append("<div class='alert alert-info my-5'><h1>Another school</h1></div>");
 				});
             },
             error: function(xhr, status, error) {
