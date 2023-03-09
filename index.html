@@ -34,7 +34,7 @@
     });
 
     class school{
-
+        
     }
 
 
@@ -47,21 +47,35 @@
                 "Authorization": "111f942a-0c00-4bb8-ac95-f514e2229066"
             },
             success: function(response) {
-                // console.log(response)
-                $.each(response, function(key, value) {
-                    schools = value;
-                    $.each(schools, function(index, item) {
-                        $("#main").append("<li>" + index + " : " + item + "</li>");
-                    })
-                    
-                    // console.log(schools)
-                    $("#main").append("<div class='alert alert-info my-5'><h1>Another school</h1></div>");
-				});
+                
+                schools = filterData(response)
+                // console.log(schools)
+                schools.forEach(school => {
+                    $("#main").append("<li>"+school["name"]+"</li>");
+                });
             },
             error: function(xhr, status, error) {
                 alert(status)
             }
         });
+    }
+
+
+
+
+
+
+    function filterData(data){
+        schools = new Array();
+        $.each(data, function(key, value) {
+                schoolInfo = new Array()
+                $.each(value, function(index, item) {
+                    index = String(index)
+                    schoolInfo[""+index] = ""+item
+                })
+                schools.push(schoolInfo)
+            });
+            return schools;
     }
 
 </script>
