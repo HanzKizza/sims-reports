@@ -13,11 +13,45 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2 vh-100 bg-primary text-white">
-                <button class=""></button>
+            <div class="col-md-2 vh-100 text-white px-1 py-5" style="background-color: #2e3192;">
+                <button class="btn w-100 text-center btn-primary" onclick="getSchools()">Schools</button>
+                <button class="btn w-100 text-center btn-primary mt-3" onclick="getSchools2()">Schools 3</button>
             </div>
-            <div class="col-md-10"></div>
+            <div class="col-md-10 overflow-auto" id="main">
+                
+            </div>
         </div>
     </div>
 </body>
 </html>
+<script>
+    $(document).ready(function () {
+        getSchools()
+    });
+    
+    class school{
+
+    }
+
+    function getSchools(){
+        alert("Fetching data")
+        $.ajax({
+            url: "https://sims-api.surepayltd.com/schoolinfo",
+            method: "GET",
+            headers: {
+                "Authorization": "111f942a-0c00-4bb8-ac95-f514e2229066"
+            },
+            success: function(response) {
+                console.log(response)
+                $.each(response, function(key, value) {
+					// $("#main").append("<li> yes" + key + ": " + value + "</li>");
+                    
+				});
+            },
+            error: function(xhr, status, error) {
+                alert(status)
+            }
+        });
+    }
+
+</script>
