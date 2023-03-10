@@ -5,21 +5,27 @@
     <!-- The seach box -->
     <input type="text" id="mySearch" class="form-control mx-1 w-25" placeholder="Search data" onkeyup="searchTable()">
 
+    <!-- Students filter -->
+    <input type="number" class="form-control mx-1 w-25 minValue" placeholder="Minimum students" onkeyup="minSearch(this)">
+    <!-- Students filter -->
+    <input type="number" class="form-control mx-1 w-25 minValue" placeholder="Minimum transactions" onkeyup="TransSearch(this)">
+
     <!-- Total number of schools -->
-    <h6 style="width:fit-content" class="mt-1 mx-5"><span class="text-muted">Total Schools</span>: <span class="totalSchools"></span></h6>
+    <h6 style="width:fit-content" class="mt-1 mx-3"><span class="text-muted">Total Schools</span>: <span class="totalSchools"></span></h6>
 </div>
 
-<table class="table table-responsive table-striped">
+<table class="table table-responsive table-striped table-hover table-condensed">
     <thead class="bg-dark text-white">
-        <tr class="text-center">
+        <tr>
             <!-- <th>Id</th> -->
             <th>School_Id</th>
             <th>Name</th>
-            <th>Type</th>
-            <th>IsValited</th>
             <th>Contact</th>
             <th>Bank</th>
-            <th>Email</th>
+            <th>Bank Name</th>
+            <th>Account Number</th>
+            <th>Transactions</th>
+            <th>Students</th>
             <th>Town</th>
             <th>Agent</th>
         </tr>
